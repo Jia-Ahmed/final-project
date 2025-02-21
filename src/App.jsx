@@ -3,18 +3,91 @@ import './App.css';
 import Login from './Login';
 import  Register  from './Register';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
+// import Header from './pages/Header';
+// import Sidebar from './pages/Sidebar';
+ import Dashboard from './pages/Dashboard';
+ import Users from './pages/Users';
+import ManageDestination from './pages/ManageDestination';
+import Settings from './pages/Settings';
+import ProtectedRoute from "./context/ProtectedRoutes.jsx";
+ import { AuthProvider } from "./context/AuthContext";
+// import { useState } from 'react';
+import AdminLayout from './layouts/AdminLayout.jsx';
+import AdminLogin from './pages/AdminLogin.jsx';
 
  
 
-export const  App=()=>{
-  
+export const  App=()=>{ 
+  // const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+  //  // Function to toggle sidebar
+  //  const OpenSidebar = () => {
+  //   setOpenSidebarToggle(!openSidebarToggle);
+  // };
 return(
+  // BrowserRouter wraps the entire app
 <BrowserRouter>
-<Routes>
+ {/* AuthProvider is wrapped inside BrowserRouter */}
+   <AuthProvider>   
+ 
+ 
+        
+        <Routes>
+          {/* Public route for Admin Login */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+             {/* Protected Routes */}
+       <Route
+        path="/admin/*"
+        element={
+          <ProtectedRoute>
+            <AdminLayout />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/Users"
+        element={
+          <ProtectedRoute>
+            <Users />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/admin/Settings"
+        element={
+          <ProtectedRoute>
+            <Settings />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+       path="/admin/ManageDestination"
+      element={
+        <ProtectedRoute>
+          <ManageDestination/>
+          </ProtectedRoute>
+      }/> 
+
+
+
+
+
+       
+     
+
+        <Route path='/Login'element={<Login/>}/> 
+       <Route path='/Register'element={<Register/>}/>  
+   </Routes> 
+  
    
-       <Route path='/Login'element={<Login/>}/> 
-       <Route path='/Register'element={<Register/>}/>
-   </Routes>  
+     </AuthProvider>  
 </BrowserRouter>
  );
 };
