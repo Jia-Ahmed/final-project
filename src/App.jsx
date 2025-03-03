@@ -14,6 +14,7 @@ import ProtectedRoute from "./context/ProtectedRoutes.jsx";
 // import { useState } from 'react';
 import AdminLayout from './layouts/AdminLayout.jsx';
 import AdminLogin from './pages/AdminLogin.jsx';
+import Profile from './pages/Profile.jsx';
 
  
 
@@ -74,6 +75,13 @@ return(
           <ManageDestination/>
           </ProtectedRoute>
       }/> 
+       <Route
+       path="/admin/profile"
+      element={
+        <ProtectedRoute>
+          <Profile/>
+          </ProtectedRoute>
+      }/>
 
 
 
@@ -92,7 +100,7 @@ return(
  );
 };
 
-
+export default App
 
 
     
@@ -178,5 +186,4 @@ return(
     
   
 
-export default App
 

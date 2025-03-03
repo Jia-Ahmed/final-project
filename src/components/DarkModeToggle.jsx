@@ -18,12 +18,13 @@ const DarkModeToggle = () => {
 
   return (
     <button
-      onClick={() => setDarkMode(!darkMode)}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-800"
-    >
-      {darkMode ? <Sun size={24} className="text-yellow-500" /> : <Moon size={24} className="text-gray-600" />}
+     onClick={() => setDarkMode(!darkMode)} className="text-gray-600 dark:text-white">
+      {darkMode ? <Sun size={24} /> : <Moon size={24} />}
     </button>
   );
 };
 
 export default DarkModeToggle;
+////////onClick={() => setDarkMode(!darkMode)}
+      // className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-white"
+      // >

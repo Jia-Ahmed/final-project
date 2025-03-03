@@ -51,3 +51,36 @@
       //   className="absolute top-5 right-2 bg-gray-300 p-1 rounded-full hover:bg-gray-400 transition">
       //   <Menu size={20} />
       // </button>
+      ////{/* <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1 py-0.5">
+      // 8
+      // </span> */}
+      {/* <div className="absolute right-0 mt-2 w-64 bg-white shadow-lg rounded-md">
+{notifications.length > 0 ? (
+   notifications.map(n => (
+       <div key={n.id} className="p-2 border-b">
+           {n.message}
+       </div>
+   ))
+) : (
+   <p className="p-2 text-center">No notifications</p>
+)}
+</div> */}
+ {/* <div className={`h-screen ${isOpen ? "w-60" : "w-20"} bg-gray-100 p-5 transition-all duration-300 shadow-md`}> */}
+     {/* Toggle Button */}
+       {/* <button
+        onClick={() => setIsCollapsed(!isCollapsed)}
+        className="absolute top-5 right-2 bg-gray-300 p-1 rounded-full hover:bg-gray-400 transition"
+        aria-expanded={!isCollapsed}
+        aria-label="Toggle Sidebar"
+      >
+        <Menu size={20} />
+      </button> */}
+      
+      {/* Logo Section */}
+      {/* <div className="flex items-center space-x-2 mb-6">
+      <img src={logo} className="w-20 h-20" alt="Logo" /> */}
+         {/* Sidebar Brand */}
+       {/* <h2 className={`text-2xl font-bold text-blue-300 flex items-center justify-center h-14 transition-all ${isCollapsed ? "hidden" : "block"}`}>
+        Admin Panel
+      </h2> 
+      </div> */}
