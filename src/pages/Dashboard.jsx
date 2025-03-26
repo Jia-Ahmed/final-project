@@ -1,41 +1,29 @@
-
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import TravelStatsChart from "../components/TravelStatsChart";
+import DashboardStats from "../components/DashboardStats";
+import ActivityLogs from "../components/ActivityLogs";
+import RecentBookings from "../components/RecentBookings";
 const Dashboard = () => {
   const { logout } = useContext(AuthContext);
   return (
-//     <div>
-//       <h1 className="text-2xl font-bold">Welcome to Jhelum Tourism</h1>
-//       <p className="mt-2 text-gray-600">Manage your users, bookings, and more.</p>
-//        {/* <button
-//         className="mt-4 bg-red-500 text-white py-2 px-4 rounded"
-//         onClick={logout}
-//       >
-//         Logout
-//       </button>  */}
-
-// {/* <div className="grid grid-cols-2 gap-6">
-//      <div className="bg-white p-4 shadow rounded-lg">
-//          <h2 className="text-xl font-semibold">Total Bookings</h2>
-//          <p className="text-3xl">100</p>
-//        </div>
-//        <div className="bg-white p-4 shadow rounded-lg">
-//          <h2 className="text-xl font-semibold">Total Destinations</h2>
-//          <p className="text-3xl">120</p>
-//        </div>
-//        <div className="bg-white p-4 shadow rounded-lg">
-//          <h2 className="text-xl font-semibold">New Users</h2>
-//          <p className="text-3xl">50</p>
-//        </div>
-       
-      
-//      </div> */}
-//     </div>
-<div className="p-6 w-full">
-<h1 className="text-3xl font-bold text-gray-800 dark:text-white text-center mb-6">
+<div className="p-6 w-full bg-gray-100 dark:bg-gray-900 min-h-screen">
+{/* <h1 className="text-3xl font-bold text-gray-800  dark:text-black text-center mb-6">
   Dashboard
-</h1>
+</h1> */}
+<div className="p-6">
+      <DashboardStats />
+      <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Left Column - Recent Bookings */}
+      <div className="bg-gray-100 dark:bg-gray-800 p-5 rounded-2xl shadow-md">
+      <RecentBookings/>
+      </div>
+          {/* Right Column - Activity Logs */}
+      <div className="bg-gray-100 dark:bg-gray-800 p-5 rounded-2xl shadow-md">
+      <ActivityLogs/>
+      </div>
+      </div>
+    </div>
 <div className="flex justify-center">
   {/* Travel Stats Chart */}
   <div className="w-full md:w-3/4 lg:w-1/2">
